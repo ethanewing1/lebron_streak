@@ -142,12 +142,12 @@
             box-shadow: 0 -2px 10px rgba(0,0,0,0.05);
         }
         
-        img {
+        .content-box img {
             cursor: pointer;
             transition: transform 0.2s;
         }
         
-        img:hover {
+        .content-box img:hover {
             transform: scale(1.02);
         }
         
@@ -171,8 +171,9 @@
             position: absolute;
             top: 50%;
             left: 50%;
-            transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%) !important;
             animation: zoomIn 0.3s;
+            cursor: default;
         }
         
         .close {
