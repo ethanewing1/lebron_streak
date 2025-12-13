@@ -148,21 +148,6 @@
             <h2>The End of an Era</h2>
             <p>On December 4, 2025, LeBron James's 10-point scoring streak came to an end. This streak lasted 1,297 regular-season games and dates back to January 6, 2007. Scoring 10 points in an NBA game is nothing to write home about, however, 1,297 games over 20 seasons is a remarkably long time in the NBA. To put this in perspective, Cooper Flagg, the first-overall pick in the 2025 NBA Draft, was born 17 days before this scoring streak started.</p>
             
-            <div class="stats">
-                <div class="stat-box">
-                    <h3>1,297</h3>
-                    <p>Consecutive Games</p>
-                </div>
-                <div class="stat-box">
-                    <h3>20</h3>
-                    <p>Seasons</p>
-                </div>
-                <div class="stat-box">
-                    <h3>27</h3>
-                    <p>Career PPG Average</p>
-                </div>
-            </div>
-            
             <p>LeBron James averages 27 points per game for his 23-year career, thus a game with 10 points would be considered an off-night by his standards. This potentially makes this scoring streak feel less impressive than it is. To justify how impressive this feat is, I wanted to analyze the game logs for LeBron and the rest of the league to understand how LeBron was able to achieve this record which will likely never be broken.</p>
         </div>
 
@@ -170,11 +155,13 @@
             <h2>The Analysis</h2>
             <p>Using the NBA API's League Game Finder endpoint, I pulled every game log for every player from the 2006-07 season to the 2025-26 season at the time of writing. Using Python's Pandas library, I created a dataframe for LeBron's game logs during his 1,297-game streak. I also created a dataframe for every other game log during this time.</p>
             
-            <p>Simply put; to score points, you need to be on the floor, and you need to be attempting shots. Thus, I analyzed LeBron's minutes and point opportunities for these 1,297 games. Point opportunities, meaning the number of points that would be scored if every shot was a make. Which gives us a formula of <strong>3 × (3-point attempts) + 2 × (2-point attempts) + 1 × (free throw attempts)</strong>. Looking at the distribution of these two statistics, we can see that they are both mostly normal distributions.</p>
+            <p>Simply put; to score points, you need to be on the floor, and you need to be attempting shots. Thus, I analyzed LeBron's minutes and point opportunities for these 1,297 games. Point opportunities, meaning the number of points that would be scored if every shot was a make. Which gives us a formula of:</p>
             
-            <div class="image-placeholder">
-                lebron_distributions.png
-            </div>
+            <p style="text-align: center; font-size: 1.1rem; margin: 1.5rem 0;"><strong>3 × (3-point attempts) + 2 × (2-point attempts) + 1 × (free throw attempts)</strong></p>
+            
+            <p>Looking at the distribution of these two statistics, we can see that they are both mostly normal distributions.</p>
+            
+            <img src="lebron_distributions.png" alt="LeBron's Minutes and Point Opportunities Distribution" style="width: 100%; max-width: 800px; display: block; margin: 2rem auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
         </div>
 
         <div class="content-box">
@@ -189,9 +176,7 @@
             
             <p>There is a caveat with this analysis though. Looking at the distribution of the other NBA players' minutes and point opportunities distributions, we can see that they are skewed to the right, away from this -2 z-score (from LeBron's distribution) threshold that we set. I also divided the histogram bars to show which games players scored 10+ points in green and which games players failed to meet this mark in red. We can see that a large portion of the red is very close to that -2 z-score mark. LeBron is 8th all-time in usage rate, even if we try to set a floor for minutes and point opportunities for the rest of the NBA, it won't fully replicate LeBron's numbers.</p>
             
-            <div class="image-placeholder">
-                other_games_distributions.png
-            </div>
+            <img src="other_games_distributions.png" alt="Other NBA Players Minutes and Point Opportunities Distribution" style="width: 100%; max-width: 800px; display: block; margin: 2rem auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
         </div>
 
         <div class="content-box">
@@ -200,18 +185,14 @@
             
             <p><strong>I ran this simulation 1,000 times and the longest streak was 321 games.</strong></p>
             
-            <div class="image-placeholder">
-                simulation_results.png
-            </div>
+            <img src="simulation_results.png" alt="Simulation Results" style="width: 100%; max-width: 800px; display: block; margin: 2rem auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
         </div>
 
         <div class="content-box">
             <h2>Conclusion</h2>
             <p>Overall, this record set by LeBron will most likely not be broken. The longevity of a career it requires is too much to ask for almost all players. 1,297 games is over 15 full seasons. Considering injuries and the league heading in a direction where stars are missing a handful of games per year to manage workloads, I am not sure if anyone will catch LeBron.</p>
             
-            <div class="image-placeholder">
-                streak_table.png
-            </div>
+            <img src="streak_table.png" alt="Streak Comparison Table" style="width: 100%; max-width: 800px; display: block; margin: 2rem auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
         </div>
     </div>
 
