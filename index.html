@@ -37,6 +37,26 @@
             opacity: 0.95;
         }
         
+        .repo-link {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.75rem 1.5rem;
+            background-color: rgba(255, 255, 255, 0.2);
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            border: 2px solid white;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+        
+        .repo-link:hover {
+            background-color: white;
+            color: #552583;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        
         .container {
             max-width: 900px;
             margin: 2rem auto;
@@ -207,6 +227,7 @@
     <header>
         <h1>LeBron James' Historic 10-Point Scoring Streak</h1>
         <p style="text-align: center;">Ethan Ewing 12/6/2025</p>
+        <a href="https://github.com/ethanewing1/lebron_streak" target="_blank" class="repo-link">View Code on GitHub</a>
     </header>
 
     <div class="container">
